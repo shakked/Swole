@@ -14,6 +14,7 @@
 		4A45AE4B1AF1405D0047EF8D /* SwoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE4A1AF1405D0047EF8D /* SwoleTests.m */; };
 		4A45AE571AF141180047EF8D /* ZSSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE551AF141180047EF8D /* ZSSHomeViewController.m */; };
 		4A45AE581AF141180047EF8D /* ZSSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A45AE561AF141180047EF8D /* ZSSHomeViewController.xib */; };
+		4A45AE5C1AF145CC0047EF8D /* ZSSWorkoutType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE5B1AF145CC0047EF8D /* ZSSWorkoutType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		4A45AE541AF141180047EF8D /* ZSSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSHomeViewController.h; sourceTree = "<group>"; };
 		4A45AE551AF141180047EF8D /* ZSSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSHomeViewController.m; sourceTree = "<group>"; };
 		4A45AE561AF141180047EF8D /* ZSSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSHomeViewController.xib; sourceTree = "<group>"; };
+		4A45AE5A1AF145CC0047EF8D /* ZSSWorkoutType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSWorkoutType.h; sourceTree = "<group>"; };
+		4A45AE5B1AF145CC0047EF8D /* ZSSWorkoutType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSWorkoutType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 			children = (
 				4A45AE541AF141180047EF8D /* ZSSHomeViewController.h */,
 				4A45AE551AF141180047EF8D /* ZSSHomeViewController.m */,
+				4A45AE5A1AF145CC0047EF8D /* ZSSWorkoutType.h */,
+				4A45AE5B1AF145CC0047EF8D /* ZSSWorkoutType.m */,
 				4A45AE561AF141180047EF8D /* ZSSHomeViewController.xib */,
 			);
 			name = Home;
@@ -227,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A45AE5C1AF145CC0047EF8D /* ZSSWorkoutType.m in Sources */,
 				4A45AE571AF141180047EF8D /* ZSSHomeViewController.m in Sources */,
 				4A45AE341AF1405C0047EF8D /* AppDelegate.m in Sources */,
 				4A45AE311AF1405C0047EF8D /* main.m in Sources */,

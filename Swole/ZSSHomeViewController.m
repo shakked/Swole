@@ -9,6 +9,14 @@
 #import "ZSSHomeViewController.h"
 
 @interface ZSSHomeViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *chestButton;
+@property (weak, nonatomic) IBOutlet UIButton *legsButton;
+@property (weak, nonatomic) IBOutlet UIButton *absButton;
+@property (weak, nonatomic) IBOutlet UIButton *shouldersButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *cardioButton;
+
+@property (nonatomic, strong) NSArray *workOutButtons;
 
 @end
 
@@ -16,22 +24,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self configureViews];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)configureViews {
+    self.workOutButtons = @[self.chestButton, self.legsButton, self.absButton, self.shouldersButton, self.backButton, self.cardioButton];
+    for (UIButton *button in self.workOutButtons) {
+        button.layer.cornerRadius = 37;
+        button.layer.shadowColor = [UIColor blackColor].CGColor;
+        button.layer.shadowOffset = CGSizeMake(2, 2);
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)chestButtonPressed:(id)sender {
 }
-*/
+
+- (IBAction)legsButtonPressed:(id)sender {
+}
+
+- (IBAction)absButtonPressed:(id)sender {
+}
+
+- (IBAction)shouldersButtonPressed:(id)sender {
+}
+
+- (IBAction)backButtonPressed:(id)sender {
+}
+
+- (IBAction)cardioButtonPressed:(id)sender {
+    
+}
 
 @end
