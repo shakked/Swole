@@ -12,9 +12,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *chestButton;
 @property (weak, nonatomic) IBOutlet UIButton *legsButton;
 @property (weak, nonatomic) IBOutlet UIButton *absButton;
-@property (weak, nonatomic) IBOutlet UIButton *shouldersButton;
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 @property (weak, nonatomic) IBOutlet UIButton *cardioButton;
+@property (weak, nonatomic) IBOutlet UIButton *armsButton;
 
 @property (nonatomic, strong) NSArray *workOutButtons;
 
@@ -28,7 +28,7 @@
 }
 
 - (void)configureViews {
-    self.workOutButtons = @[self.chestButton, self.legsButton, self.absButton, self.shouldersButton, self.backButton, self.cardioButton];
+    self.workOutButtons = @[self.chestButton, self.legsButton, self.absButton, self.armsButton, self.backButton, self.cardioButton];
     for (UIButton *button in self.workOutButtons) {
         button.layer.cornerRadius = 37;
         button.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -45,8 +45,9 @@
 - (IBAction)absButtonPressed:(id)sender {
 }
 
-- (IBAction)shouldersButtonPressed:(id)sender {
+- (IBAction)armsButtonPressed:(id)sender {
 }
+
 
 - (IBAction)backButtonPressed:(id)sender {
 }

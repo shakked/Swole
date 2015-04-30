@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Swole-Bridging-Header.h"
+#import "Swole-Swift.h"
 @interface AppDelegate ()
 
 @end
@@ -19,6 +20,10 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    ZSSJournalParentViewController *jpvc = [[ZSSJournalParentViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:jpvc];
+    self.window.rootViewController = nav;
     return YES;
 }
 

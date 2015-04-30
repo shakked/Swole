@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3BC6011AF1501000043291 /* ZSSMuscleGroupStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3BC6001AF1501000043291 /* ZSSMuscleGroupStore.m */; };
+		4A3BC6041AF1767600043291 /* Swole.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A3BC6021AF1767600043291 /* Swole.xcdatamodeld */; };
 		4A45AE311AF1405C0047EF8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE301AF1405C0047EF8D /* main.m */; };
 		4A45AE341AF1405C0047EF8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE331AF1405C0047EF8D /* AppDelegate.m */; };
 		4A45AE3C1AF1405C0047EF8D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A45AE3B1AF1405C0047EF8D /* Images.xcassets */; };
@@ -14,7 +16,20 @@
 		4A45AE4B1AF1405D0047EF8D /* SwoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE4A1AF1405D0047EF8D /* SwoleTests.m */; };
 		4A45AE571AF141180047EF8D /* ZSSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE551AF141180047EF8D /* ZSSHomeViewController.m */; };
 		4A45AE581AF141180047EF8D /* ZSSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A45AE561AF141180047EF8D /* ZSSHomeViewController.xib */; };
-		4A45AE5C1AF145CC0047EF8D /* ZSSWorkoutType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE5B1AF145CC0047EF8D /* ZSSWorkoutType.m */; };
+		4A4DAF3E1AF18B6A00AE8C21 /* ZSSMuscleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF3D1AF18B6A00AE8C21 /* ZSSMuscleGroup.m */; };
+		4A4DAF411AF18B6B00AE8C21 /* ZSSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF401AF18B6B00AE8C21 /* ZSSWorkout.m */; };
+		4A4DAF441AF18B6B00AE8C21 /* ZSSExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF431AF18B6B00AE8C21 /* ZSSExercise.m */; };
+		4A4DAF471AF18B6B00AE8C21 /* ZSSSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF461AF18B6B00AE8C21 /* ZSSSet.m */; };
+		4A4DAF4A1AF18B6B00AE8C21 /* ZSSExerciseDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF491AF18B6B00AE8C21 /* ZSSExerciseDefinition.m */; };
+		4A4DAF4D1AF19F9600AE8C21 /* ZSSJournalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF4C1AF19F9600AE8C21 /* ZSSJournalTableViewController.m */; };
+		4A4DAF501AF1A35800AE8C21 /* ZSSJournalParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF4F1AF1A35800AE8C21 /* ZSSJournalParentViewController.swift */; };
+		4A4DAF521AF1AAF500AE8C21 /* ZSSHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DAF511AF1AAF500AE8C21 /* ZSSHeaderView.xib */; };
+		4A4DAF541AF1AC8C00AE8C21 /* ZSSHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF531AF1AC8C00AE8C21 /* ZSSHeaderView.swift */; };
+		4A4DAF561AF1BAD400AE8C21 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF551AF1BAD400AE8C21 /* UIColor+Hex.swift */; };
+		4A4DAF591AF1BDF500AE8C21 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF571AF1BDF500AE8C21 /* ExerciseCell.swift */; };
+		4A4DAF5A1AF1BDF500AE8C21 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DAF581AF1BDF500AE8C21 /* ExerciseCell.xib */; };
+		4A4DAF5D1AF1BE0800AE8C21 /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF5B1AF1BE0800AE8C21 /* AddCell.swift */; };
+		4A4DAF5E1AF1BE0800AE8C21 /* AddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DAF5C1AF1BE0800AE8C21 /* AddCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4A3BC5FF1AF1501000043291 /* ZSSMuscleGroupStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSMuscleGroupStore.h; sourceTree = "<group>"; };
+		4A3BC6001AF1501000043291 /* ZSSMuscleGroupStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSMuscleGroupStore.m; sourceTree = "<group>"; };
+		4A3BC6031AF1767600043291 /* Swole.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Swole.xcdatamodel; sourceTree = "<group>"; };
 		4A45AE2B1AF1405C0047EF8D /* Swole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swole.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A45AE2F1AF1405C0047EF8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A45AE301AF1405C0047EF8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,8 +59,27 @@
 		4A45AE541AF141180047EF8D /* ZSSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSHomeViewController.h; sourceTree = "<group>"; };
 		4A45AE551AF141180047EF8D /* ZSSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSHomeViewController.m; sourceTree = "<group>"; };
 		4A45AE561AF141180047EF8D /* ZSSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSHomeViewController.xib; sourceTree = "<group>"; };
-		4A45AE5A1AF145CC0047EF8D /* ZSSWorkoutType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSWorkoutType.h; sourceTree = "<group>"; };
-		4A45AE5B1AF145CC0047EF8D /* ZSSWorkoutType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSWorkoutType.m; sourceTree = "<group>"; };
+		4A4DAF3C1AF18B6A00AE8C21 /* ZSSMuscleGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSMuscleGroup.h; sourceTree = "<group>"; };
+		4A4DAF3D1AF18B6A00AE8C21 /* ZSSMuscleGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSMuscleGroup.m; sourceTree = "<group>"; };
+		4A4DAF3F1AF18B6B00AE8C21 /* ZSSWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSWorkout.h; sourceTree = "<group>"; };
+		4A4DAF401AF18B6B00AE8C21 /* ZSSWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSWorkout.m; sourceTree = "<group>"; };
+		4A4DAF421AF18B6B00AE8C21 /* ZSSExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSExercise.h; sourceTree = "<group>"; };
+		4A4DAF431AF18B6B00AE8C21 /* ZSSExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSExercise.m; sourceTree = "<group>"; };
+		4A4DAF451AF18B6B00AE8C21 /* ZSSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSSet.h; sourceTree = "<group>"; };
+		4A4DAF461AF18B6B00AE8C21 /* ZSSSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSSet.m; sourceTree = "<group>"; };
+		4A4DAF481AF18B6B00AE8C21 /* ZSSExerciseDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSExerciseDefinition.h; sourceTree = "<group>"; };
+		4A4DAF491AF18B6B00AE8C21 /* ZSSExerciseDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSExerciseDefinition.m; sourceTree = "<group>"; };
+		4A4DAF4B1AF19F9600AE8C21 /* ZSSJournalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSJournalTableViewController.h; sourceTree = "<group>"; };
+		4A4DAF4C1AF19F9600AE8C21 /* ZSSJournalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSJournalTableViewController.m; sourceTree = "<group>"; };
+		4A4DAF4E1AF1A35700AE8C21 /* Swole-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swole-Bridging-Header.h"; sourceTree = "<group>"; };
+		4A4DAF4F1AF1A35800AE8C21 /* ZSSJournalParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSJournalParentViewController.swift; sourceTree = "<group>"; };
+		4A4DAF511AF1AAF500AE8C21 /* ZSSHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSHeaderView.xib; sourceTree = "<group>"; };
+		4A4DAF531AF1AC8C00AE8C21 /* ZSSHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSHeaderView.swift; sourceTree = "<group>"; };
+		4A4DAF551AF1BAD400AE8C21 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		4A4DAF571AF1BDF500AE8C21 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		4A4DAF581AF1BDF500AE8C21 /* ExerciseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
+		4A4DAF5B1AF1BE0800AE8C21 /* AddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
+		4A4DAF5C1AF1BE0800AE8C21 /* AddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +160,33 @@
 		4A45AE591AF1411F0047EF8D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				4A3BC6021AF1767600043291 /* Swole.xcdatamodeld */,
+				4A4DAF3C1AF18B6A00AE8C21 /* ZSSMuscleGroup.h */,
+				4A4DAF3D1AF18B6A00AE8C21 /* ZSSMuscleGroup.m */,
+				4A4DAF481AF18B6B00AE8C21 /* ZSSExerciseDefinition.h */,
+				4A4DAF491AF18B6B00AE8C21 /* ZSSExerciseDefinition.m */,
+				4A4DAF551AF1BAD400AE8C21 /* UIColor+Hex.swift */,
+				4A4DAF3F1AF18B6B00AE8C21 /* ZSSWorkout.h */,
+				4A4DAF401AF18B6B00AE8C21 /* ZSSWorkout.m */,
+				4A4DAF421AF18B6B00AE8C21 /* ZSSExercise.h */,
+				4A4DAF431AF18B6B00AE8C21 /* ZSSExercise.m */,
+				4A4DAF451AF18B6B00AE8C21 /* ZSSSet.h */,
+				4A4DAF461AF18B6B00AE8C21 /* ZSSSet.m */,
 				4A45AE541AF141180047EF8D /* ZSSHomeViewController.h */,
 				4A45AE551AF141180047EF8D /* ZSSHomeViewController.m */,
-				4A45AE5A1AF145CC0047EF8D /* ZSSWorkoutType.h */,
-				4A45AE5B1AF145CC0047EF8D /* ZSSWorkoutType.m */,
 				4A45AE561AF141180047EF8D /* ZSSHomeViewController.xib */,
+				4A3BC5FF1AF1501000043291 /* ZSSMuscleGroupStore.h */,
+				4A3BC6001AF1501000043291 /* ZSSMuscleGroupStore.m */,
+				4A4DAF4F1AF1A35800AE8C21 /* ZSSJournalParentViewController.swift */,
+				4A4DAF571AF1BDF500AE8C21 /* ExerciseCell.swift */,
+				4A4DAF581AF1BDF500AE8C21 /* ExerciseCell.xib */,
+				4A4DAF5B1AF1BE0800AE8C21 /* AddCell.swift */,
+				4A4DAF5C1AF1BE0800AE8C21 /* AddCell.xib */,
+				4A4DAF511AF1AAF500AE8C21 /* ZSSHeaderView.xib */,
+				4A4DAF531AF1AC8C00AE8C21 /* ZSSHeaderView.swift */,
+				4A4DAF4B1AF19F9600AE8C21 /* ZSSJournalTableViewController.h */,
+				4A4DAF4C1AF19F9600AE8C21 /* ZSSJournalTableViewController.m */,
+				4A4DAF4E1AF1A35700AE8C21 /* Swole-Bridging-Header.h */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -213,7 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A45AE3F1AF1405C0047EF8D /* LaunchScreen.xib in Resources */,
+				4A4DAF5E1AF1BE0800AE8C21 /* AddCell.xib in Resources */,
 				4A45AE3C1AF1405C0047EF8D /* Images.xcassets in Resources */,
+				4A4DAF5A1AF1BDF500AE8C21 /* ExerciseCell.xib in Resources */,
+				4A4DAF521AF1AAF500AE8C21 /* ZSSHeaderView.xib in Resources */,
 				4A45AE581AF141180047EF8D /* ZSSHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,9 +294,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A45AE5C1AF145CC0047EF8D /* ZSSWorkoutType.m in Sources */,
+				4A4DAF441AF18B6B00AE8C21 /* ZSSExercise.m in Sources */,
+				4A4DAF5D1AF1BE0800AE8C21 /* AddCell.swift in Sources */,
+				4A3BC6041AF1767600043291 /* Swole.xcdatamodeld in Sources */,
 				4A45AE571AF141180047EF8D /* ZSSHomeViewController.m in Sources */,
+				4A4DAF501AF1A35800AE8C21 /* ZSSJournalParentViewController.swift in Sources */,
+				4A4DAF541AF1AC8C00AE8C21 /* ZSSHeaderView.swift in Sources */,
 				4A45AE341AF1405C0047EF8D /* AppDelegate.m in Sources */,
+				4A4DAF3E1AF18B6A00AE8C21 /* ZSSMuscleGroup.m in Sources */,
+				4A4DAF561AF1BAD400AE8C21 /* UIColor+Hex.swift in Sources */,
+				4A4DAF591AF1BDF500AE8C21 /* ExerciseCell.swift in Sources */,
+				4A4DAF471AF18B6B00AE8C21 /* ZSSSet.m in Sources */,
+				4A4DAF411AF18B6B00AE8C21 /* ZSSWorkout.m in Sources */,
+				4A4DAF4D1AF19F9600AE8C21 /* ZSSJournalTableViewController.m in Sources */,
+				4A4DAF4A1AF18B6B00AE8C21 /* ZSSExerciseDefinition.m in Sources */,
+				4A3BC6011AF1501000043291 /* ZSSMuscleGroupStore.m in Sources */,
 				4A45AE311AF1405C0047EF8D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,9 +427,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Swole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swole/Swole-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -363,9 +441,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Swole/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Swole/Swole-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -422,6 +503,7 @@
 				4A45AE501AF1405D0047EF8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4A45AE511AF1405D0047EF8D /* Build configuration list for PBXNativeTarget "SwoleTests" */ = {
 			isa = XCConfigurationList;
@@ -430,8 +512,22 @@
 				4A45AE531AF1405D0047EF8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4A3BC6021AF1767600043291 /* Swole.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4A3BC6031AF1767600043291 /* Swole.xcdatamodel */,
+			);
+			currentVersion = 4A3BC6031AF1767600043291 /* Swole.xcdatamodel */;
+			path = Swole.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4A45AE231AF1405C0047EF8D /* Project object */;
 }
