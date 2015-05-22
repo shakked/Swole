@@ -9,6 +9,9 @@
 #import "ZSSJournalTableViewController.h"
 #import "Swole-Swift.h"
 #import "ZSSMuscleGroupStore.h"
+#import "ZSSWorkout.h"
+#import "ZSSExercise.h"
+#import "ZSSExerciseDefinition.h"
 
 @interface ZSSJournalTableViewController ()
 
@@ -26,16 +29,19 @@
 - (void)configureTableView {
     self.tableView.tableHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"ZSSHeaderView" owner:self options:nil] objectAtIndex:0];
     self.tableView.tableHeaderView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.tableView.tableHeaderView.frame.size.height - 20);
-    [self configureCells];
+   [self configureCells];
 }
 
 - (void)configureCells {
     [self.tableView registerNib:[UINib nibWithNibName:@"ExerciseCell" bundle:nil] forCellReuseIdentifier:@"exerciseCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"AddCell" bundle:nil] forCellReuseIdentifier:@"addCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"AddCell" bundle:nil] forCellReuseIdentifier:@"setCell"];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self loadWorkoutsDate:self.date];
+    [self.tableView reloadData];
     
     ZSSHeaderView *headerView = (ZSSHeaderView *)self.tableView.tableHeaderView;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -46,83 +52,161 @@
 
 - (void)loadWorkoutsDate:(NSDate *)date {
     self.workouts = [[ZSSMuscleGroupStore sharedStore] workoutsForDate:date];
-
+    
 }
 
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    return 1;
+    if (self.workouts.count > 0) {
+        return self.workouts.count + 1;
+    } else {
+        return 1;
+    }
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Workouts";
+    if (section == 0) {
+        return @"";
+    } else {
+        ZSSWorkout *workout = self.workouts[section - 1];
+        return workout.name;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    if (section == 0) {
+        return 1;
+    } else {
+        ZSSWorkout *workout = self.workouts[section - 1];
+        return workout.exercises.count + 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    if (indexPath.section == 0) {
+        AddCell *addCell = [self.tableView dequeueReusableCellWithIdentifier:@"addCell" forIndexPath:indexPath];
+        addCell.addLabel.text = @"Add a Workout";
+        return addCell;
+    } else if (indexPath.row == 0) {
+        AddCell *addCell = [self.tableView dequeueReusableCellWithIdentifier:@"addCell" forIndexPath:indexPath];
+        addCell.addLabel.text = @"Add an Exercise";
+        return addCell;
+    } else {
+        ZSSWorkout *workout = self.workouts[indexPath.section - 1];
+        ZSSExercise *exercise = workout.exercises.allObjects[indexPath.row - 1];
+        ExerciseCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"exerciseCell" forIndexPath:indexPath];
+        cell.exerciseName.text = exercise.exerciseDefinition.name;
+        return cell;
+    }
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (NSInteger)getExerciseIndexFromIndexPath:(NSIndexPath *)indexPath andHeaderIndexes:(NSArray *)headerIndexes {
+    for (NSInteger i = 0; (i + 1) < headerIndexes.count;i++) {
+        NSInteger headerI = ((NSNumber *)headerIndexes[i]).integerValue;
+        NSInteger headerI1 = ((NSNumber *)headerIndexes[i + 1]).integerValue;
+        if (indexPath.row > headerI && indexPath.row < headerI1) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+
+//    if (indexPath.section == 0) {
+//        AddCell *cell = (AddCell *)[tableView dequeueReusableCellWithIdentifier:@"addCell" forIndexPath:indexPath];
+//        cell.addLabel.text = @"+ Add a Workout";
+//        return cell;
+//    } else {
+//        if (indexPath.row == 0) {
+//            AddCell *cell = (AddCell *)[tableView dequeueReusableCellWithIdentifier:@"addCell" forIndexPath:indexPath];
+//            cell.addLabel.text = @"+ Add an Exercise";
+//            return cell;
+//        }
+//        ZSSWorkout *workout = self.workouts[indexPath.section - 1];
+//        ZSSExercise *exercise = (ZSSExercise *)[workout.exercises allObjects][indexPath.row - 1];
+//        ExerciseCell *cell = (ExerciseCell *)[tableView dequeueReusableCellWithIdentifier:@"exerciseCell" forIndexPath:indexPath];
+//        cell.exerciseName.text = exercise.exerciseDefinition.name;
+//        return cell;
+//    }
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        return 40;
+    } else {
+        return 60;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        [self showCreateWorkout];
+    } else {
+        if (indexPath.row == 0) {
+            ZSSMuscleGroupTableViewController *mtvc = [[ZSSMuscleGroupTableViewController alloc] init];
+            mtvc.workout = self.workouts[indexPath.section - 1];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mtvc];
+            [self presentViewController:nav animated:YES completion:nil];
+        }
+    }
+}
+
+- (void)showCreateWorkout {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Create a New Workout"
+                                                                   message:@"Enter the name of your Workout"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
     
-    // Configure the cell...
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
+                                                 style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action) {
+                                                   [self addWorkoutForAlert:alert];
+                                                   [alert dismissViewControllerAnimated:YES completion:nil];
+                                               }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * action) {
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Workout Name";
+    }];
     
-    return cell;
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)addWorkoutForAlert:(UIAlertController *)alert {
+    UITextField *textField = (UITextField *)alert.textFields.firstObject;
+    NSString *workoutName = textField.text;
+    if (workoutName.length == 0) {
+        workoutName = @"Workout 1";
+    }
+    
+    [[ZSSMuscleGroupStore sharedStore] createWorkoutWithName:workoutName];
+    [self loadWorkoutsDate:[NSDate date]];
+    [self.tableView reloadData];
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (NSArray *)getHeadersIndexesForWorkout:(ZSSWorkout *)workout {
+    
+    NSMutableArray *exerciseHeaders = [[NSMutableArray alloc] init];
+    
+    if (workout.exercises.count > 0) {
+        int i = 0;
+        int exerciseIndex = 0;
+        while (i < workout.exercises.count) {
+            [exerciseHeaders addObject:[NSNumber numberWithInt:exerciseIndex]];
+            ZSSExercise *exercise = workout.exercises.allObjects[i];
+            exerciseIndex += exercise.sets.count;
+            i++;
+        }
+    }
+    return exerciseHeaders;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

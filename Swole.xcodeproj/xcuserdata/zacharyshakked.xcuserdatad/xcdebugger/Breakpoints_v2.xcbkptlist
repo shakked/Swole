@@ -9,13 +9,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Swole/ZSSJournalParentViewController.swift"
-            timestampString = "452049832.820099"
+            filePath = "Swole/ZSSJournalTableViewController.m"
+            timestampString = "452139508.644448"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "viewControllerAtIndexAndDate(_:date:)"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-loadWorkoutsDate:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Swole/ZSSMuscleGroupStore.m"
+            timestampString = "452139572.49605"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "-createExerciseWithExerciseDefinition:workout:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -3,6 +3,7 @@
 //  Swole
 //
 //  Created by Zachary Shakked on 4/29/15.
+//  I am a huge faggot and like to eat shit. 
 //  Copyright (c) 2015 Zachary Shakked. All rights reserved.
 //
 
@@ -10,6 +11,7 @@
 #import "ZSSMuscleGroup.h"
 #import "ZSSExercise.h"
 #import "ZSSExerciseDefinition.h"
+#import "ZSSWorkout.h"
 @import CoreData;
 
 @interface ZSSMuscleGroupStore()
@@ -103,11 +105,24 @@
 
 #pragma mark - Retrieval Methods
 
+- (NSArray *)workoutsForDate:(NSDate *)date {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSMutableArray *workouts = [[NSMutableArray alloc] init];
+    for (ZSSWorkout *workout in self.privateWorkouts) {
+        if ([calendar isDate:workout.date inSameDayAsDate:date]) {
+            [workouts addObject:workout];
+        }
+    }
+    return workouts;
+}
 
+- (NSArray *)muscleGroups {
+    return self.privateMuscleGroups;
+}
 
 
 - (instancetype)initPrivate {
-    
+
     self = [super init];
     
     if (self) {
@@ -160,7 +175,6 @@
 }
 
 - (NSString *)itemArchivePath {
-    
     NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
                                                                        NSUserDomainMask,
                                                                        YES);
@@ -186,6 +200,36 @@
         self.privateMuscleGroups = [[NSMutableArray alloc] initWithArray:result];
     }
     
+    if (!self.privateExerciseDefinitions) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *e = [NSEntityDescription entityForName:@"ZSSExerciseDefinition"
+                                             inManagedObjectContext:self.context];
+        request.entity = e;
+        NSError *error;
+        NSArray *result = [self.context executeFetchRequest:request error:&error];
+        if (!result) {
+            [NSException raise:@"Fetch failed"
+                        format:@"Reason: %@", [error localizedDescription]];
+        }
+        
+        self.privateExerciseDefinitions = [[NSMutableArray alloc] initWithArray:result];
+    }
+    
+    if (!self.privateWorkouts) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *e = [NSEntityDescription entityForName:@"ZSSWorkout"
+                                             inManagedObjectContext:self.context];
+        request.entity = e;
+        NSError *error;
+        NSArray *result = [self.context executeFetchRequest:request error:&error];
+        if (!result) {
+            [NSException raise:@"Fetch failed"
+                        format:@"Reason: %@", [error localizedDescription]];
+        }
+        
+        self.privateWorkouts = [[NSMutableArray alloc] initWithArray:result];
+    }
+    
     if (!self.privateExercises) {
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSEntityDescription *e = [NSEntityDescription entityForName:@"ZSSExercise"
@@ -200,66 +244,124 @@
         
         self.privateExercises = [[NSMutableArray alloc] initWithArray:result];
     }
+
+    if (!self.privateSets) {
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *e = [NSEntityDescription entityForName:@"ZSSSet"
+                                             inManagedObjectContext:self.context];
+        request.entity = e;
+        NSError *error;
+        NSArray *result = [self.context executeFetchRequest:request error:&error];
+        if (!result) {
+            [NSException raise:@"Fetch failed"
+                        format:@"Reason: %@", [error localizedDescription]];
+        }
+        
+        self.privateSets = [[NSMutableArray alloc] initWithArray:result];
+    }
+   
 }
 
+- (ZSSMuscleGroup *)muscleGroupWithName:(NSString *)name {
+    ZSSMuscleGroup *muscleGroup = [self createNewMuscleGroup];
+    muscleGroup.name = name;
+    
+    return muscleGroup;
+}
+
+- (ZSSMuscleGroup *)muscleGroupWithName:(NSString *)name parentMuscleGroups:(NSArray *)parentMuscleGroups {
+    ZSSMuscleGroup *muscleGroup = [self createNewMuscleGroup];
+    muscleGroup.name = name;
+    [muscleGroup addParentMuscleGroups:[NSSet setWithArray:parentMuscleGroups]];
+    return muscleGroup;
+}
+
+- (ZSSExerciseDefinition *)exerciseWithName:(NSString *)name
+                         primaryMuscleGroup:(ZSSMuscleGroup *)muscleGroup
+                      accessoryMuscleGroups:(NSArray *)accessoryMuscleGroups {
+    ZSSExerciseDefinition *exerciseDefinition = [self createNewExerciseDefinition];
+    exerciseDefinition.primaryMuscleGroup = muscleGroup;
+    exerciseDefinition.name = name;
+    [exerciseDefinition addAccessoryMuscleGroup:[NSSet setWithArray:accessoryMuscleGroups]];
+    return exerciseDefinition;
+}
+
+- (void)createWorkoutWithName:(NSString *)name {
+    ZSSWorkout *workout = [self createNewWorkout];
+    workout.name = name;
+    NSDate *now = [NSDate date];
+    workout.date = now;
+    workout.startTime = now;
+}
+
+- (void)createExerciseWithExerciseDefinition:(ZSSExerciseDefinition *)exerciseDefinition
+                                     workout:(ZSSWorkout *)workout {
+    ZSSExercise *exercise = [self createNewExercise];
+    exercise.time = [NSDate date];
+    exercise.exerciseDefinition = exerciseDefinition;
+    exercise.workout = workout;
+    
+}
 
 - (void)loadMuscleGroupsAndExercises{
-    ZSSMuscleGroup *chest = [ZSSMuscleGroup muscleGroupWithName:@"Chest"];
-    ZSSMuscleGroup *legs = [ZSSMuscleGroup muscleGroupWithName:@"Legs"];
-    ZSSMuscleGroup *arms = [ZSSMuscleGroup muscleGroupWithName:@"Arms"];
-    ZSSMuscleGroup *shoulders = [ZSSMuscleGroup muscleGroupWithName:@"Shoulders"];
-    ZSSMuscleGroup *back = [ZSSMuscleGroup muscleGroupWithName:@"Back"];
-    ZSSMuscleGroup *cardio = [ZSSMuscleGroup muscleGroupWithName:@"Cardio"];
-    ZSSMuscleGroup *core = [ZSSMuscleGroup muscleGroupWithName:@"Core"];
+    ZSSMuscleGroup *chest = [self muscleGroupWithName:@"Chest"];
     
-    ZSSMuscleGroup *upperChest = [ZSSMuscleGroup muscleGroupWithName:@"Upper Chest" parentMuscleGroups:@[chest]];
-    ZSSMuscleGroup *middleChest = [ZSSMuscleGroup muscleGroupWithName:@"Middle Chest" parentMuscleGroups:@[chest]];
-    ZSSMuscleGroup *lowerChest = [ZSSMuscleGroup muscleGroupWithName:@"Lower Chest" parentMuscleGroups:@[chest]];
+    ZSSMuscleGroup *legs = [self muscleGroupWithName:@"Legs"];
+    ZSSMuscleGroup *arms = [self muscleGroupWithName:@"Arms"];
+    ZSSMuscleGroup *shoulders = [self muscleGroupWithName:@"Shoulders"];
+    ZSSMuscleGroup *back = [self muscleGroupWithName:@"Back"];
+    ZSSMuscleGroup *cardio = [self muscleGroupWithName:@"Cardio"];
+    ZSSMuscleGroup *core = [self muscleGroupWithName:@"Core"];
     
-    ZSSMuscleGroup *quads = [ZSSMuscleGroup muscleGroupWithName:@"Quads" parentMuscleGroups:@[legs]];
-    ZSSMuscleGroup *calves = [ZSSMuscleGroup muscleGroupWithName:@"Calves" parentMuscleGroups:@[legs]];
-    ZSSMuscleGroup *glutes = [ZSSMuscleGroup muscleGroupWithName:@"Glutes" parentMuscleGroups:@[legs]];
-    ZSSMuscleGroup *hamstrings = [ZSSMuscleGroup muscleGroupWithName:@"Hamstrings" parentMuscleGroups:@[legs]];
+    ZSSMuscleGroup *upperChest = [self muscleGroupWithName:@"Upper Chest" parentMuscleGroups:@[chest]];
+    ZSSMuscleGroup *middleChest = [self muscleGroupWithName:@"Middle Chest" parentMuscleGroups:@[chest]];
+    ZSSMuscleGroup *lowerChest = [self muscleGroupWithName:@"Lower Chest" parentMuscleGroups:@[chest]];
     
-    ZSSMuscleGroup *biceps = [ZSSMuscleGroup muscleGroupWithName:@"Biceps" parentMuscleGroups:@[arms]];
-    ZSSMuscleGroup *triceps = [ZSSMuscleGroup muscleGroupWithName:@"Triceps" parentMuscleGroups:@[arms]];
-    ZSSMuscleGroup *forearms = [ZSSMuscleGroup muscleGroupWithName:@"Forearms" parentMuscleGroups:@[arms]];
+    ZSSMuscleGroup *quads = [self muscleGroupWithName:@"Quads" parentMuscleGroups:@[legs]];
+    ZSSMuscleGroup *calves = [self muscleGroupWithName:@"Calves" parentMuscleGroups:@[legs]];
+    ZSSMuscleGroup *glutes = [self muscleGroupWithName:@"Glutes" parentMuscleGroups:@[legs]];
+    ZSSMuscleGroup *hamstrings = [self muscleGroupWithName:@"Hamstrings" parentMuscleGroups:@[legs]];
+    
+    ZSSMuscleGroup *biceps = [self muscleGroupWithName:@"Biceps" parentMuscleGroups:@[arms]];
+    ZSSMuscleGroup *triceps = [self muscleGroupWithName:@"Triceps" parentMuscleGroups:@[arms]];
+    ZSSMuscleGroup *forearms = [self muscleGroupWithName:@"Forearms" parentMuscleGroups:@[arms]];
 
-    ZSSMuscleGroup *traps = [ZSSMuscleGroup muscleGroupWithName:@"Traps" parentMuscleGroups:@[shoulders, back]];
-    ZSSMuscleGroup *rearDelts = [ZSSMuscleGroup muscleGroupWithName:@"Rear Delts" parentMuscleGroups:@[shoulders]];
-    ZSSMuscleGroup *lateralDelts = [ZSSMuscleGroup muscleGroupWithName:@"Lateral Delts" parentMuscleGroups:@[shoulders]];
-    ZSSMuscleGroup *frontDelts = [ZSSMuscleGroup muscleGroupWithName:@"Front Delts" parentMuscleGroups:@[shoulders]];
+    ZSSMuscleGroup *traps = [self muscleGroupWithName:@"Traps" parentMuscleGroups:@[shoulders, back]];
+    ZSSMuscleGroup *rearDelts = [self muscleGroupWithName:@"Rear Delts" parentMuscleGroups:@[shoulders]];
+    ZSSMuscleGroup *lateralDelts = [self muscleGroupWithName:@"Lateral Delts" parentMuscleGroups:@[shoulders]];
+    ZSSMuscleGroup *frontDelts = [self muscleGroupWithName:@"Front Delts" parentMuscleGroups:@[shoulders]];
     
-    ZSSMuscleGroup *lats = [ZSSMuscleGroup muscleGroupWithName:@"Lats" parentMuscleGroups:@[back]];
-    ZSSMuscleGroup *lowerBack = [ZSSMuscleGroup muscleGroupWithName:@"Lower Back" parentMuscleGroups:@[back]];
-    ZSSMuscleGroup *upperBack = [ZSSMuscleGroup muscleGroupWithName:@"Upper Back" parentMuscleGroups:@[back]];
+    ZSSMuscleGroup *lats = [self muscleGroupWithName:@"Lats" parentMuscleGroups:@[back]];
+    ZSSMuscleGroup *lowerBack = [self muscleGroupWithName:@"Lower Back" parentMuscleGroups:@[back]];
+    ZSSMuscleGroup *upperBack = [self muscleGroupWithName:@"Upper Back" parentMuscleGroups:@[back]];
     
-    ZSSMuscleGroup *abs = [ZSSMuscleGroup muscleGroupWithName:@"Abs" parentMuscleGroups:@[core]];
-    ZSSMuscleGroup *obliques = [ZSSMuscleGroup muscleGroupWithName:@"Obliques" parentMuscleGroups:@[core]];
+    ZSSMuscleGroup *abs = [self muscleGroupWithName:@"Abs" parentMuscleGroups:@[core]];
+    ZSSMuscleGroup *obliques = [self muscleGroupWithName:@"Obliques" parentMuscleGroups:@[core]];
     
-    ZSSExercise *barbellFlatBenchPress = [ZSSExerciseDefinition exerciseWithName:@"Barbell Flat Bench Press" primaryMuscleGroup:middleChest accessoryMuscleGroups:@[frontDelts, triceps]];
+    ZSSExerciseDefinition *barbellFlatBenchPress = [self exerciseWithName:@"Barbell Flat Bench Press" primaryMuscleGroup:middleChest accessoryMuscleGroups:@[frontDelts, triceps]];
     
-    ZSSExerciseDefinition *basbellInclineBenchPres = [ZSSExerciseDefinition exerciseWithName:@"Barbell Incline Bench Press" primaryMuscleGroup:upperChest accessoryMuscleGroups:@[frontDelts, triceps]];
+    ZSSExerciseDefinition *basbellInclineBenchPres = [self exerciseWithName:@"Barbell Incline Bench Press" primaryMuscleGroup:upperChest accessoryMuscleGroups:@[frontDelts, triceps]];
     
-    ZSSExerciseDefinition *dumbbellFlatBenchPress = [ZSSExerciseDefinition exerciseWithName:@"Dumbbell Flat Bench Press" primaryMuscleGroup:middleChest accessoryMuscleGroups:@[frontDelts, triceps]];
+    ZSSExerciseDefinition *dumbbellFlatBenchPress = [self exerciseWithName:@"Dumbbell Flat Bench Press" primaryMuscleGroup:middleChest accessoryMuscleGroups:@[frontDelts, triceps]];
     
-    ZSSExerciseDefinition *inclinedumbbellPress = [ZSSExerciseDefinition exerciseWithName:@"Incline Dumbbell Press" primaryMuscleGroup:upperChest accessoryMuscleGroups:@[frontDelts, triceps]];
+    ZSSExerciseDefinition *inclinedumbbellPress = [self exerciseWithName:@"Incline Dumbbell Press" primaryMuscleGroup:upperChest accessoryMuscleGroups:@[frontDelts, triceps]];
     
-    ZSSExerciseDefinition *declinedumbbellPress = [ZSSExerciseDefinition exerciseWithName:@"Decline Dumbbell Press" primaryMuscleGroup:lowerChest accessoryMuscleGroups:@[frontDelts, triceps]];
+    ZSSExerciseDefinition *declinedumbbellPress = [self exerciseWithName:@"Decline Dumbbell Press" primaryMuscleGroup:lowerChest accessoryMuscleGroups:@[frontDelts, triceps]];
     
-    ZSSExerciseDefinition *wideGripDips = [ZSSExerciseDefinition exerciseWithName:@"Wide Grip Dips" primaryMuscleGroup:chest accessoryMuscleGroups:@[triceps]];
+    ZSSExerciseDefinition *wideGripDips = [self exerciseWithName:@"Wide Grip Dips" primaryMuscleGroup:chest accessoryMuscleGroups:@[triceps]];
 
-    ZSSExerciseDefinition *machineInclinePress = [ZSSExerciseDefinition exerciseWithName:@"Machine Incline Press" primaryMuscleGroup:upperChest accessoryMuscleGroups:@[triceps]];
+    ZSSExerciseDefinition *machineInclinePress = [self exerciseWithName:@"Machine Incline Press" primaryMuscleGroup:upperChest accessoryMuscleGroups:@[triceps]];
     
-    ZSSExerciseDefinition *machineFlatPress = [ZSSExerciseDefinition exerciseWithName:@"Machine Flat Press" primaryMuscleGroup:middleChest accessoryMuscleGroups:@[triceps]];
+    ZSSExerciseDefinition *machineFlatPress = [self exerciseWithName:@"Machine Flat Press" primaryMuscleGroup:middleChest accessoryMuscleGroups:@[triceps]];
     
-    ZSSExerciseDefinition *machineDeclinePress = [ZSSExerciseDefinition exerciseWithName:@"Machine Decline Press" primaryMuscleGroup:lowerChest accessoryMuscleGroups:@[triceps]];
+    ZSSExerciseDefinition *machineDeclinePress = [self exerciseWithName:@"Machine Decline Press" primaryMuscleGroup:lowerChest accessoryMuscleGroups:@[triceps]];
     
-    ZSSExerciseDefinition *dumbbellFlatFlys = [ZSSExerciseDefinition exerciseWithName:@"Flat Dumbbell Flys" primaryMuscleGroup:middleChest accessoryMuscleGroups:@[]];
-    ZSSExerciseDefinition *dumbbellInclineFlys = [ZSSExerciseDefinition exerciseWithName:@"Incline Dumbbell Flys" primaryMuscleGroup:upperChest accessoryMuscleGroups:@[]];
-    ZSSExerciseDefinition *dumbbellDeclineFlys = [ZSSExerciseDefinition exerciseWithName:@"Decline Dumbbell Flys" primaryMuscleGroup:lowerChest accessoryMuscleGroups:@[]];
+    ZSSExerciseDefinition *dumbbellFlatFlys = [self exerciseWithName:@"Flat Dumbbell Flys" primaryMuscleGroup:middleChest accessoryMuscleGroups:@[]];
+    ZSSExerciseDefinition *dumbbellInclineFlys = [self exerciseWithName:@"Incline Dumbbell Flys" primaryMuscleGroup:upperChest accessoryMuscleGroups:@[]];
+    ZSSExerciseDefinition *dumbbellDeclineFlys = [self exerciseWithName:@"Decline Dumbbell Flys" primaryMuscleGroup:lowerChest accessoryMuscleGroups:@[]];
     
-    ZSSExerciseDefinition *standingCableCrossovers = [ZSSExerciseDefinition exerciseWithName:@"Standing Cable Crossovers" primaryMuscleGroup:chest accessoryMuscleGroups:@[]];
+    ZSSExerciseDefinition *standingCableCrossovers = [self exerciseWithName:@"Standing Cable Crossovers" primaryMuscleGroup:chest accessoryMuscleGroups:@[]];
+    
 }
 
 @end

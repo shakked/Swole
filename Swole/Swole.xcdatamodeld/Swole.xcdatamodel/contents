@@ -22,25 +22,39 @@
         <relationship name="parentMuscleGroups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSMuscleGroup" inverseName="childMuscleGroups" inverseEntity="ZSSMuscleGroup" syncable="YES"/>
         <relationship name="primaryExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSExerciseDefinition" inverseName="primaryMuscleGroup" inverseEntity="ZSSExerciseDefinition" syncable="YES"/>
         <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSWorkout" inverseName="targetedMuscleGroups" inverseEntity="ZSSWorkout" syncable="YES"/>
+        <relationship name="workoutTemplates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSWorkoutTemplate" inverseName="targetedMuscleGroups" inverseEntity="ZSSWorkoutTemplate" syncable="YES"/>
     </entity>
     <entity name="ZSSSet" representedClassName="ZSSSet" syncable="YES">
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSExercise" inverseName="sets" inverseEntity="ZSSExercise" syncable="YES"/>
     </entity>
+    <entity name="ZSSUser" representedClassName="ZSSUser" syncable="YES">
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSWorkout" inverseName="author" inverseEntity="ZSSWorkout" syncable="YES"/>
+        <relationship name="workoutTemplates" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSWorkoutTemplate" inverseName="author" inverseEntity="ZSSWorkoutTemplate" syncable="YES"/>
+    </entity>
     <entity name="ZSSWorkout" representedClassName="ZSSWorkout" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSUser" inverseName="workouts" inverseEntity="ZSSUser" syncable="YES"/>
         <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSExercise" inverseName="workout" inverseEntity="ZSSExercise" syncable="YES"/>
         <relationship name="targetedMuscleGroups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSMuscleGroup" inverseName="workouts" inverseEntity="ZSSMuscleGroup" syncable="YES"/>
+        <relationship name="workoutTemplate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSWorkoutTemplate" inverseName="exampleWorkouts" inverseEntity="ZSSWorkoutTemplate" syncable="YES"/>
+    </entity>
+    <entity name="ZSSWorkoutTemplate" representedClassName="ZSSWorkoutTemplate" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSSUser" inverseName="workoutTemplates" inverseEntity="ZSSUser" syncable="YES"/>
+        <relationship name="exampleWorkouts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSWorkout" inverseName="workoutTemplate" inverseEntity="ZSSWorkout" syncable="YES"/>
+        <relationship name="exercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSExercise" syncable="YES"/>
+        <relationship name="targetedMuscleGroups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ZSSMuscleGroup" inverseName="workoutTemplates" inverseEntity="ZSSMuscleGroup" syncable="YES"/>
     </entity>
     <elements>
         <element name="ZSSExercise" positionX="-38" positionY="-159" width="128" height="118"/>
-        <element name="ZSSMuscleGroup" positionX="-342" positionY="36" width="128" height="133"/>
-        <element name="ZSSWorkout" positionX="-342" positionY="-216" width="128" height="133"/>
-        <element name="ZSSSet" positionX="-36" positionY="258" width="128" height="88"/>
         <element name="ZSSExerciseDefinition" positionX="-180" positionY="45" width="128" height="133"/>
+        <element name="ZSSMuscleGroup" positionX="-342" positionY="36" width="128" height="150"/>
+        <element name="ZSSSet" positionX="-36" positionY="258" width="128" height="88"/>
+        <element name="ZSSWorkout" positionX="-342" positionY="-216" width="128" height="135"/>
+        <element name="ZSSWorkoutTemplate" positionX="-180" positionY="-63" width="128" height="120"/>
+        <element name="ZSSUser" positionX="-171" positionY="-54" width="128" height="75"/>
     </elements>
 </model>

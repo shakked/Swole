@@ -15,9 +15,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+ Add A Workout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alc-D3-ZsZ">
-                        <rect key="frame" x="8" y="19" width="132" height="21"/>
+                        <rect key="frame" x="8" y="19" width="209" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="132" id="JEQ-mG-adD"/>
+                            <constraint firstAttribute="width" constant="209" id="JEQ-mG-adD"/>
                             <constraint firstAttribute="height" constant="21" id="R9m-Gl-QyJ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -30,6 +30,9 @@
                     <constraint firstAttribute="centerY" secondItem="alc-D3-ZsZ" secondAttribute="centerY" id="cJZ-bA-vR5"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="addLabel" destination="alc-D3-ZsZ" id="od8-dB-AZC"/>
+            </connections>
             <point key="canvasLocation" x="319" y="355.5"/>
         </tableViewCell>
     </objects>

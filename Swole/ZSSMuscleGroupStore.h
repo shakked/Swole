@@ -24,7 +24,12 @@
 - (ZSSExercise *)createNewExercise;
 - (ZSSSet *)createNewSet;
 
-- (ZSSWorkout *)workoutsForDate:(NSDate *)date;
+- (NSArray *)workoutsForDate:(NSDate *)date;
+- (NSArray *)muscleGroups;
+
+- (void)createWorkoutWithName:(NSString *)name;
+- (void)createExerciseWithExerciseDefinition:(ZSSExerciseDefinition *)exerciseDefinition
+                                     workout:(ZSSWorkout *)workout;
 
 
 @end

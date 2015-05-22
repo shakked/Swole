@@ -2,7 +2,7 @@
 //  ZSSExerciseDefinition.h
 //  Swole
 //
-//  Created by Zachary Shakked on 4/29/15.
+//  Created by Zachary Shakked on 5/22/15.
 //  Copyright (c) 2015 Zachary Shakked. All rights reserved.
 //
 
@@ -17,8 +17,8 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * tutorialURL;
 @property (nonatomic, retain) NSSet *accessoryMuscleGroup;
-@property (nonatomic, retain) ZSSMuscleGroup *primaryMuscleGroup;
 @property (nonatomic, retain) NSSet *exampleExercises;
+@property (nonatomic, retain) ZSSMuscleGroup *primaryMuscleGroup;
 @end
 
 @interface ZSSExerciseDefinition (CoreDataGeneratedAccessors)
@@ -33,9 +33,4 @@
 - (void)addExampleExercises:(NSSet *)values;
 - (void)removeExampleExercises:(NSSet *)values;
 
-+ (instancetype)exerciseWithName:(NSString *)name
-//                     explanation:(NSString *)explanation
-//                     tutorialURL:(NSString *)tutorialURL
-                         primaryMuscleGroup:(ZSSMuscleGroup *)muscleGroup
-                      accessoryMuscleGroups:(NSArray *)accessoryMuscleGroups;
 @end

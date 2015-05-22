@@ -3,3 +3,8 @@
 //
 
 #import "ZSSJournalTableViewController.h"
+#import "ZSSMuscleGroup.h"
+#import "ZSSExerciseDefinition.h"
+#import "ZSSExercise.h"
+#import "ZSSWorkout.h"
+#import "ZSSMuscleGroupStore.h"

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AFCA9171EB70981900C5FDB /* libPods-SwoleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E2250A380773DC044E11CC /* libPods-SwoleTests.a */; };
+		4A2294641AF1E8E6004C15FD /* ZSSMuscleGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2294631AF1E8E6004C15FD /* ZSSMuscleGroupTableViewController.swift */; };
+		4A2294671AF1E9F1004C15FD /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2294651AF1E9F1004C15FD /* SelectionCell.swift */; };
+		4A2294681AF1E9F1004C15FD /* SelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A2294661AF1E9F1004C15FD /* SelectionCell.xib */; };
 		4A3BC6011AF1501000043291 /* ZSSMuscleGroupStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A3BC6001AF1501000043291 /* ZSSMuscleGroupStore.m */; };
 		4A3BC6041AF1767600043291 /* Swole.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A3BC6021AF1767600043291 /* Swole.xcdatamodeld */; };
 		4A45AE311AF1405C0047EF8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE301AF1405C0047EF8D /* main.m */; };
@@ -16,11 +20,6 @@
 		4A45AE4B1AF1405D0047EF8D /* SwoleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE4A1AF1405D0047EF8D /* SwoleTests.m */; };
 		4A45AE571AF141180047EF8D /* ZSSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A45AE551AF141180047EF8D /* ZSSHomeViewController.m */; };
 		4A45AE581AF141180047EF8D /* ZSSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A45AE561AF141180047EF8D /* ZSSHomeViewController.xib */; };
-		4A4DAF3E1AF18B6A00AE8C21 /* ZSSMuscleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF3D1AF18B6A00AE8C21 /* ZSSMuscleGroup.m */; };
-		4A4DAF411AF18B6B00AE8C21 /* ZSSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF401AF18B6B00AE8C21 /* ZSSWorkout.m */; };
-		4A4DAF441AF18B6B00AE8C21 /* ZSSExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF431AF18B6B00AE8C21 /* ZSSExercise.m */; };
-		4A4DAF471AF18B6B00AE8C21 /* ZSSSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF461AF18B6B00AE8C21 /* ZSSSet.m */; };
-		4A4DAF4A1AF18B6B00AE8C21 /* ZSSExerciseDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF491AF18B6B00AE8C21 /* ZSSExerciseDefinition.m */; };
 		4A4DAF4D1AF19F9600AE8C21 /* ZSSJournalTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF4C1AF19F9600AE8C21 /* ZSSJournalTableViewController.m */; };
 		4A4DAF501AF1A35800AE8C21 /* ZSSJournalParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF4F1AF1A35800AE8C21 /* ZSSJournalParentViewController.swift */; };
 		4A4DAF521AF1AAF500AE8C21 /* ZSSHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DAF511AF1AAF500AE8C21 /* ZSSHeaderView.xib */; };
@@ -30,6 +29,17 @@
 		4A4DAF5A1AF1BDF500AE8C21 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DAF581AF1BDF500AE8C21 /* ExerciseCell.xib */; };
 		4A4DAF5D1AF1BE0800AE8C21 /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4DAF5B1AF1BE0800AE8C21 /* AddCell.swift */; };
 		4A4DAF5E1AF1BE0800AE8C21 /* AddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4A4DAF5C1AF1BE0800AE8C21 /* AddCell.xib */; };
+		4AC77B691B0FC74D00672C4C /* ZSSExerciseDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC77B681B0FC74D00672C4C /* ZSSExerciseDefinition.m */; };
+		4AC77B6C1B0FC74D00672C4C /* ZSSUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC77B6B1B0FC74D00672C4C /* ZSSUser.m */; };
+		4AC77B6F1B0FC74D00672C4C /* ZSSMuscleGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC77B6E1B0FC74D00672C4C /* ZSSMuscleGroup.m */; };
+		4AC77B721B0FC74D00672C4C /* ZSSExercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC77B711B0FC74D00672C4C /* ZSSExercise.m */; };
+		4AC77B751B0FC74D00672C4C /* ZSSSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC77B741B0FC74D00672C4C /* ZSSSet.m */; };
+		4AC77B781B0FC74E00672C4C /* ZSSWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC77B771B0FC74E00672C4C /* ZSSWorkout.m */; };
+		4AC77B7B1B0FC74E00672C4C /* ZSSWorkoutTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AC77B7A1B0FC74E00672C4C /* ZSSWorkoutTemplate.m */; };
+		4AE4012D1AF1EC3F00468A1F /* ZSSExerciseDefinitionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4012C1AF1EC3F00468A1F /* ZSSExerciseDefinitionTableViewController.swift */; };
+		4AE401301AF3263E00468A1F /* SetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE4012E1AF3263E00468A1F /* SetCell.swift */; };
+		4AE401311AF3263E00468A1F /* SetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE4012F1AF3263E00468A1F /* SetCell.xib */; };
+		D485A6DBFD003981C24A206B /* libPods-Swole.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5908D2A147D61065C7BE367F /* libPods-Swole.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +53,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17FC1E18F77360522C650F26 /* Pods-Swole.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swole.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swole/Pods-Swole.release.xcconfig"; sourceTree = "<group>"; };
+		4A2294631AF1E8E6004C15FD /* ZSSMuscleGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSMuscleGroupTableViewController.swift; sourceTree = "<group>"; };
+		4A2294651AF1E9F1004C15FD /* SelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		4A2294661AF1E9F1004C15FD /* SelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionCell.xib; sourceTree = "<group>"; };
 		4A3BC5FF1AF1501000043291 /* ZSSMuscleGroupStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSMuscleGroupStore.h; sourceTree = "<group>"; };
 		4A3BC6001AF1501000043291 /* ZSSMuscleGroupStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSMuscleGroupStore.m; sourceTree = "<group>"; };
 		4A3BC6031AF1767600043291 /* Swole.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Swole.xcdatamodel; sourceTree = "<group>"; };
@@ -59,16 +73,6 @@
 		4A45AE541AF141180047EF8D /* ZSSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSHomeViewController.h; sourceTree = "<group>"; };
 		4A45AE551AF141180047EF8D /* ZSSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSHomeViewController.m; sourceTree = "<group>"; };
 		4A45AE561AF141180047EF8D /* ZSSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZSSHomeViewController.xib; sourceTree = "<group>"; };
-		4A4DAF3C1AF18B6A00AE8C21 /* ZSSMuscleGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSMuscleGroup.h; sourceTree = "<group>"; };
-		4A4DAF3D1AF18B6A00AE8C21 /* ZSSMuscleGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSMuscleGroup.m; sourceTree = "<group>"; };
-		4A4DAF3F1AF18B6B00AE8C21 /* ZSSWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSWorkout.h; sourceTree = "<group>"; };
-		4A4DAF401AF18B6B00AE8C21 /* ZSSWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSWorkout.m; sourceTree = "<group>"; };
-		4A4DAF421AF18B6B00AE8C21 /* ZSSExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSExercise.h; sourceTree = "<group>"; };
-		4A4DAF431AF18B6B00AE8C21 /* ZSSExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSExercise.m; sourceTree = "<group>"; };
-		4A4DAF451AF18B6B00AE8C21 /* ZSSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSSet.h; sourceTree = "<group>"; };
-		4A4DAF461AF18B6B00AE8C21 /* ZSSSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSSet.m; sourceTree = "<group>"; };
-		4A4DAF481AF18B6B00AE8C21 /* ZSSExerciseDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSExerciseDefinition.h; sourceTree = "<group>"; };
-		4A4DAF491AF18B6B00AE8C21 /* ZSSExerciseDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSExerciseDefinition.m; sourceTree = "<group>"; };
 		4A4DAF4B1AF19F9600AE8C21 /* ZSSJournalTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSJournalTableViewController.h; sourceTree = "<group>"; };
 		4A4DAF4C1AF19F9600AE8C21 /* ZSSJournalTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSJournalTableViewController.m; sourceTree = "<group>"; };
 		4A4DAF4E1AF1A35700AE8C21 /* Swole-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Swole-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -80,6 +84,28 @@
 		4A4DAF581AF1BDF500AE8C21 /* ExerciseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = "<group>"; };
 		4A4DAF5B1AF1BE0800AE8C21 /* AddCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
 		4A4DAF5C1AF1BE0800AE8C21 /* AddCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCell.xib; sourceTree = "<group>"; };
+		4AC77B671B0FC74D00672C4C /* ZSSExerciseDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSExerciseDefinition.h; sourceTree = "<group>"; };
+		4AC77B681B0FC74D00672C4C /* ZSSExerciseDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSExerciseDefinition.m; sourceTree = "<group>"; };
+		4AC77B6A1B0FC74D00672C4C /* ZSSUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSUser.h; sourceTree = "<group>"; };
+		4AC77B6B1B0FC74D00672C4C /* ZSSUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSUser.m; sourceTree = "<group>"; };
+		4AC77B6D1B0FC74D00672C4C /* ZSSMuscleGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSMuscleGroup.h; sourceTree = "<group>"; };
+		4AC77B6E1B0FC74D00672C4C /* ZSSMuscleGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSMuscleGroup.m; sourceTree = "<group>"; };
+		4AC77B701B0FC74D00672C4C /* ZSSExercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSExercise.h; sourceTree = "<group>"; };
+		4AC77B711B0FC74D00672C4C /* ZSSExercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSExercise.m; sourceTree = "<group>"; };
+		4AC77B731B0FC74D00672C4C /* ZSSSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSSet.h; sourceTree = "<group>"; };
+		4AC77B741B0FC74D00672C4C /* ZSSSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSSet.m; sourceTree = "<group>"; };
+		4AC77B761B0FC74E00672C4C /* ZSSWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSWorkout.h; sourceTree = "<group>"; };
+		4AC77B771B0FC74E00672C4C /* ZSSWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSWorkout.m; sourceTree = "<group>"; };
+		4AC77B791B0FC74E00672C4C /* ZSSWorkoutTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSSWorkoutTemplate.h; sourceTree = "<group>"; };
+		4AC77B7A1B0FC74E00672C4C /* ZSSWorkoutTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZSSWorkoutTemplate.m; sourceTree = "<group>"; };
+		4AE4012C1AF1EC3F00468A1F /* ZSSExerciseDefinitionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZSSExerciseDefinitionTableViewController.swift; sourceTree = "<group>"; };
+		4AE4012E1AF3263E00468A1F /* SetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCell.swift; sourceTree = "<group>"; };
+		4AE4012F1AF3263E00468A1F /* SetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetCell.xib; sourceTree = "<group>"; };
+		56E2250A380773DC044E11CC /* libPods-SwoleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwoleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5908D2A147D61065C7BE367F /* libPods-Swole.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Swole.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		762872CC0CA1B56AFDC34325 /* Pods-SwoleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwoleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwoleTests/Pods-SwoleTests.release.xcconfig"; sourceTree = "<group>"; };
+		A0AE341EDB9B6A0718B96202 /* Pods-Swole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swole.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swole/Pods-Swole.debug.xcconfig"; sourceTree = "<group>"; };
+		FE33375BF15A28C3559028E8 /* Pods-SwoleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwoleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwoleTests/Pods-SwoleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D485A6DBFD003981C24A206B /* libPods-Swole.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFCA9171EB70981900C5FDB /* libPods-SwoleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +134,8 @@
 				4A45AE2D1AF1405C0047EF8D /* Swole */,
 				4A45AE471AF1405D0047EF8D /* SwoleTests */,
 				4A45AE2C1AF1405C0047EF8D /* Products */,
+				7B751A72200FDE8A906A07DB /* Pods */,
+				5BAD850D1DBCF69E78F6DD8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -161,34 +191,72 @@
 			isa = PBXGroup;
 			children = (
 				4A3BC6021AF1767600043291 /* Swole.xcdatamodeld */,
-				4A4DAF3C1AF18B6A00AE8C21 /* ZSSMuscleGroup.h */,
-				4A4DAF3D1AF18B6A00AE8C21 /* ZSSMuscleGroup.m */,
-				4A4DAF481AF18B6B00AE8C21 /* ZSSExerciseDefinition.h */,
-				4A4DAF491AF18B6B00AE8C21 /* ZSSExerciseDefinition.m */,
+				4AC77B7C1B0FC75D00672C4C /* CD NSMangedObject Sublcasses */,
 				4A4DAF551AF1BAD400AE8C21 /* UIColor+Hex.swift */,
-				4A4DAF3F1AF18B6B00AE8C21 /* ZSSWorkout.h */,
-				4A4DAF401AF18B6B00AE8C21 /* ZSSWorkout.m */,
-				4A4DAF421AF18B6B00AE8C21 /* ZSSExercise.h */,
-				4A4DAF431AF18B6B00AE8C21 /* ZSSExercise.m */,
-				4A4DAF451AF18B6B00AE8C21 /* ZSSSet.h */,
-				4A4DAF461AF18B6B00AE8C21 /* ZSSSet.m */,
 				4A45AE541AF141180047EF8D /* ZSSHomeViewController.h */,
 				4A45AE551AF141180047EF8D /* ZSSHomeViewController.m */,
 				4A45AE561AF141180047EF8D /* ZSSHomeViewController.xib */,
-				4A3BC5FF1AF1501000043291 /* ZSSMuscleGroupStore.h */,
-				4A3BC6001AF1501000043291 /* ZSSMuscleGroupStore.m */,
-				4A4DAF4F1AF1A35800AE8C21 /* ZSSJournalParentViewController.swift */,
 				4A4DAF571AF1BDF500AE8C21 /* ExerciseCell.swift */,
 				4A4DAF581AF1BDF500AE8C21 /* ExerciseCell.xib */,
+				4A2294651AF1E9F1004C15FD /* SelectionCell.swift */,
+				4A2294661AF1E9F1004C15FD /* SelectionCell.xib */,
 				4A4DAF5B1AF1BE0800AE8C21 /* AddCell.swift */,
 				4A4DAF5C1AF1BE0800AE8C21 /* AddCell.xib */,
 				4A4DAF511AF1AAF500AE8C21 /* ZSSHeaderView.xib */,
+				4A3BC5FF1AF1501000043291 /* ZSSMuscleGroupStore.h */,
+				4A3BC6001AF1501000043291 /* ZSSMuscleGroupStore.m */,
 				4A4DAF531AF1AC8C00AE8C21 /* ZSSHeaderView.swift */,
+				4A4DAF4F1AF1A35800AE8C21 /* ZSSJournalParentViewController.swift */,
 				4A4DAF4B1AF19F9600AE8C21 /* ZSSJournalTableViewController.h */,
 				4A4DAF4C1AF19F9600AE8C21 /* ZSSJournalTableViewController.m */,
+				4AE4012E1AF3263E00468A1F /* SetCell.swift */,
+				4AE4012F1AF3263E00468A1F /* SetCell.xib */,
+				4A2294631AF1E8E6004C15FD /* ZSSMuscleGroupTableViewController.swift */,
+				4AE4012C1AF1EC3F00468A1F /* ZSSExerciseDefinitionTableViewController.swift */,
 				4A4DAF4E1AF1A35700AE8C21 /* Swole-Bridging-Header.h */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		4AC77B7C1B0FC75D00672C4C /* CD NSMangedObject Sublcasses */ = {
+			isa = PBXGroup;
+			children = (
+				4AC77B791B0FC74E00672C4C /* ZSSWorkoutTemplate.h */,
+				4AC77B7A1B0FC74E00672C4C /* ZSSWorkoutTemplate.m */,
+				4AC77B761B0FC74E00672C4C /* ZSSWorkout.h */,
+				4AC77B771B0FC74E00672C4C /* ZSSWorkout.m */,
+				4AC77B731B0FC74D00672C4C /* ZSSSet.h */,
+				4AC77B741B0FC74D00672C4C /* ZSSSet.m */,
+				4AC77B701B0FC74D00672C4C /* ZSSExercise.h */,
+				4AC77B711B0FC74D00672C4C /* ZSSExercise.m */,
+				4AC77B6D1B0FC74D00672C4C /* ZSSMuscleGroup.h */,
+				4AC77B6E1B0FC74D00672C4C /* ZSSMuscleGroup.m */,
+				4AC77B6A1B0FC74D00672C4C /* ZSSUser.h */,
+				4AC77B6B1B0FC74D00672C4C /* ZSSUser.m */,
+				4AC77B671B0FC74D00672C4C /* ZSSExerciseDefinition.h */,
+				4AC77B681B0FC74D00672C4C /* ZSSExerciseDefinition.m */,
+			);
+			name = "CD NSMangedObject Sublcasses";
+			sourceTree = "<group>";
+		};
+		5BAD850D1DBCF69E78F6DD8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5908D2A147D61065C7BE367F /* libPods-Swole.a */,
+				56E2250A380773DC044E11CC /* libPods-SwoleTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B751A72200FDE8A906A07DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0AE341EDB9B6A0718B96202 /* Pods-Swole.debug.xcconfig */,
+				17FC1E18F77360522C650F26 /* Pods-Swole.release.xcconfig */,
+				FE33375BF15A28C3559028E8 /* Pods-SwoleTests.debug.xcconfig */,
+				762872CC0CA1B56AFDC34325 /* Pods-SwoleTests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A45AE4E1AF1405D0047EF8D /* Build configuration list for PBXNativeTarget "Swole" */;
 			buildPhases = (
+				465B1FD8C610934D0962598D /* Check Pods Manifest.lock */,
 				4A45AE271AF1405C0047EF8D /* Sources */,
 				4A45AE281AF1405C0047EF8D /* Frameworks */,
 				4A45AE291AF1405C0047EF8D /* Resources */,
+				43203E48E4A2C36C6387779D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -215,9 +285,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4A45AE511AF1405D0047EF8D /* Build configuration list for PBXNativeTarget "SwoleTests" */;
 			buildPhases = (
+				F484C498C9E0DD33B87592EA /* Check Pods Manifest.lock */,
 				4A45AE401AF1405D0047EF8D /* Sources */,
 				4A45AE411AF1405D0047EF8D /* Frameworks */,
 				4A45AE421AF1405D0047EF8D /* Resources */,
+				16EB7DF8114AA413D8FBDABB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,12 +343,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE401311AF3263E00468A1F /* SetCell.xib in Resources */,
 				4A45AE3F1AF1405C0047EF8D /* LaunchScreen.xib in Resources */,
 				4A4DAF5E1AF1BE0800AE8C21 /* AddCell.xib in Resources */,
 				4A45AE3C1AF1405C0047EF8D /* Images.xcassets in Resources */,
 				4A4DAF5A1AF1BDF500AE8C21 /* ExerciseCell.xib in Resources */,
 				4A4DAF521AF1AAF500AE8C21 /* ZSSHeaderView.xib in Resources */,
 				4A45AE581AF141180047EF8D /* ZSSHomeViewController.xib in Resources */,
+				4A2294681AF1E9F1004C15FD /* SelectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,25 +363,94 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16EB7DF8114AA413D8FBDABB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwoleTests/Pods-SwoleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43203E48E4A2C36C6387779D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swole/Pods-Swole-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		465B1FD8C610934D0962598D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F484C498C9E0DD33B87592EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4A45AE271AF1405C0047EF8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A4DAF441AF18B6B00AE8C21 /* ZSSExercise.m in Sources */,
+				4AE401301AF3263E00468A1F /* SetCell.swift in Sources */,
+				4AE4012D1AF1EC3F00468A1F /* ZSSExerciseDefinitionTableViewController.swift in Sources */,
 				4A4DAF5D1AF1BE0800AE8C21 /* AddCell.swift in Sources */,
+				4AC77B691B0FC74D00672C4C /* ZSSExerciseDefinition.m in Sources */,
+				4A2294671AF1E9F1004C15FD /* SelectionCell.swift in Sources */,
 				4A3BC6041AF1767600043291 /* Swole.xcdatamodeld in Sources */,
 				4A45AE571AF141180047EF8D /* ZSSHomeViewController.m in Sources */,
 				4A4DAF501AF1A35800AE8C21 /* ZSSJournalParentViewController.swift in Sources */,
+				4AC77B6C1B0FC74D00672C4C /* ZSSUser.m in Sources */,
 				4A4DAF541AF1AC8C00AE8C21 /* ZSSHeaderView.swift in Sources */,
+				4AC77B7B1B0FC74E00672C4C /* ZSSWorkoutTemplate.m in Sources */,
+				4A2294641AF1E8E6004C15FD /* ZSSMuscleGroupTableViewController.swift in Sources */,
+				4AC77B781B0FC74E00672C4C /* ZSSWorkout.m in Sources */,
 				4A45AE341AF1405C0047EF8D /* AppDelegate.m in Sources */,
-				4A4DAF3E1AF18B6A00AE8C21 /* ZSSMuscleGroup.m in Sources */,
 				4A4DAF561AF1BAD400AE8C21 /* UIColor+Hex.swift in Sources */,
+				4AC77B721B0FC74D00672C4C /* ZSSExercise.m in Sources */,
 				4A4DAF591AF1BDF500AE8C21 /* ExerciseCell.swift in Sources */,
-				4A4DAF471AF18B6B00AE8C21 /* ZSSSet.m in Sources */,
-				4A4DAF411AF18B6B00AE8C21 /* ZSSWorkout.m in Sources */,
+				4AC77B751B0FC74D00672C4C /* ZSSSet.m in Sources */,
 				4A4DAF4D1AF19F9600AE8C21 /* ZSSJournalTableViewController.m in Sources */,
-				4A4DAF4A1AF18B6B00AE8C21 /* ZSSExerciseDefinition.m in Sources */,
+				4AC77B6F1B0FC74D00672C4C /* ZSSMuscleGroup.m in Sources */,
 				4A3BC6011AF1501000043291 /* ZSSMuscleGroupStore.m in Sources */,
 				4A45AE311AF1405C0047EF8D /* main.m in Sources */,
 			);
@@ -425,6 +568,7 @@
 		};
 		4A45AE4F1AF1405D0047EF8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0AE341EDB9B6A0718B96202 /* Pods-Swole.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -439,6 +583,7 @@
 		};
 		4A45AE501AF1405D0047EF8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17FC1E18F77360522C650F26 /* Pods-Swole.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -452,6 +597,7 @@
 		};
 		4A45AE521AF1405D0047EF8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE33375BF15A28C3559028E8 /* Pods-SwoleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -471,6 +617,7 @@
 		};
 		4A45AE531AF1405D0047EF8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 762872CC0CA1B56AFDC34325 /* Pods-SwoleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

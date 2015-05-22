@@ -17,7 +17,6 @@
         super.viewDidLoad()
         configurePageViewController()
         configureViews()
-        configureTableView()
     }
 
     func configurePageViewController() -> Void {
@@ -47,7 +46,6 @@
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! ZSSJournalTableViewController).index

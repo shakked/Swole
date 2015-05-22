@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddCell: UITableViewCell {
+@objc class AddCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,4 +21,5 @@ class AddCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBOutlet weak var addLabel: UILabel!
 }
